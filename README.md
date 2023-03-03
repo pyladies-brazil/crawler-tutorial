@@ -16,7 +16,9 @@ Nesse tutorial ensinamos a utilizar [`requests`](https://docs.python-requests.or
     - [Ambiente virtual](#ambiente-virtual)
         - [O que é um ambiente virtual?](#o-que-é-um-ambiente-virtual)
         - [Criando um ambiente virtual](#criando-um-ambiente-virtual)
-4. [Material de referência](#material-de-referência)
+4. [Executando o crawler](#executando-o-crawler)
+5. [Explicação detalhada do crawler](#explicação-detalhada-do-crawler)
+6. [Material de referência](#material-de-referência)
 
 ## Seja muito bem vinda!
 Se você chegou até aqui, significa que você já consegue entender conceitos básicos de programação e desenvolvimento de algoritmos *(caso queira revisar alguns conceitos de programação veja os [materiais de referência](#material-de-referência))* e está pronta para entrar no universo dos crawlers, descobrir o que são, como funcionam e desenvolver seu próprio crawler. 
@@ -75,19 +77,54 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
     python3 -m venv crawler-env
     ```
 
-3. Ative o ambiente virtual
+3. Ative o ambiente virtual, caso ele ainda não tenha sido ativado.
 
     ```bash
     source crawler-env/bin/activate
     ```
 
-4. Instale as bibliotecas que iremos utilizar nesse projeto. Essas bibliotecas e as suas respectivas versões estão definidas no arquivo `requirements.txt`. No Python, para instalar bibliotecas a partir desse arquivo, executamos o comando:
+4. Instale as bibliotecas que iremos utilizar nesse projeto (com o ambiente virtual ativado). Essas bibliotecas e as suas respectivas versões estão definidas no arquivo `requirements.txt`. No Python, para instalar bibliotecas a partir desse arquivo, executamos o comando:
 
     ```bash
     pip install -r requirements.txt
     ```
 
 **PRONTO!** :tada: :confetti_ball: Conseguimos criar o nosso ambiente virtual e instalar as bibliotecas que vamos utilizar nesse projeto!  
+
+> Para desativar o ambiente virtual, execute: `deactivate`.
+
+## Executando o crawler
+
+Depois de ter criando o ambiente virtual e instalando as bibliotecas, ative o ambiente virtual (caso ele não esteja ativo):
+
+```bash
+source crawler-env/bin/activate
+```
+
+E execute o crawler que foi desenvolvido:
+
+```bash
+python crawler.py
+```
+
+## Explicação detalhada do crawler
+
+Caso você queira entender mais a fundo esse crawler e ter acesso a muito mais material de referência, abra no seu navegador o arquivo `crawler_explicacao.html`. 
+
+Você também pode brincar com esse material. Para isso recomendamos você utilizar o [Jupyter](https://jupyter.org/), mais especificamente o `JupyterLab`. Sendo assim, em seu terminal execute:
+
+```bash
+jupyter-lab
+```
+
+TARÁM! Será aberto em seu navegador uma janelinha mais ou menos que nem essa:
+
+![jupyter-exemplo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvinisalazar.github.io%2Fpython-fundamentos-basicos%2Ffig%2F0_jupyterlab_landing_page.png&f=1&nofb=1&ipt=c269ecf91b224c98d28d5fc4dc818ceb90c6e415dbe9b58c33897281fb030cbe&ipo=images)
+
+Dentro do JupyterLab você pode abrir o arquivo `crawler_explicacao.ipynb` e brincar com o crawler. 
+
+Boas raspagens!
+
 
 ## Material de referência
 - [Tutorial de Python - PyLadies Rio](https://github.com/PyLadiesRio/workshop-python01)
