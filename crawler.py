@@ -48,7 +48,3 @@ with open('vagas.csv', mode='w') as arquivo_csv:
     gerador_csv = csv.DictWriter(arquivo_csv, fieldnames=cabecalho)
     gerador_csv.writeheader()
     gerador_csv.writerows(lista_de_vagas)
-
-# PRINT MOSTRANDO COMO FICA A URL DO LINKEDING QUANDO A GENTE PREENCHE OS CAMPOS DE CUSTA
-# ADICIONAR PRINT MOSTRANDO O CSS FUNCIONANDO
-# EXPLICAR A DIFERENÇA ENTRE FIND E SELECT
