@@ -61,31 +61,31 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
 
 1. Abra o terminal no seu computador, e nele entre na pasta desse projeto:
 
-```bash
-cd crawler-tutorial/
-```
+    ```bash
+    cd crawler-tutorial/
+    ```
 
-> Dependendo da onde você baixou esse projeto, o caminho para acessar a pasta pode mudar. Para saber mais sobre o comando `cd`, acesse [aqui](https://pt.wikipedia.org/wiki/Cd_(comando)).
+    > Dependendo da onde você baixou esse projeto, o caminho para acessar a pasta pode mudar. Para saber mais sobre o comando `cd`, acesse [aqui](https://pt.wikipedia.org/wiki/Cd_(comando)).
 
-Para saber se estamos realmente dentro da pasta correta, você pode executar o comando `ls` (mais informações, [aqui](https://pt.wikipedia.org/wiki/Ls)) no terminal, ele deverá mostrar os arquivos que existem nesse projeto.
+    Para saber se estamos realmente dentro da pasta correta, você pode executar o comando `ls` (mais informações, [aqui](https://pt.wikipedia.org/wiki/Ls)) no terminal, ele deverá mostrar os arquivos que existem nesse projeto.
 
 2. Crie o ambiente virtual utilizando a biblioteca [`venv`](https://docs.python.org/3/library/venv.html) do Python. Onde, `crawler-venv` será o nome do ambiente virtual.
 
-```bash
-python3 -m venv crawler-env
-```
+    ```bash
+    python3 -m venv crawler-env
+    ```
 
 3. Ative o ambiente virtual
 
-```bash
-source crawler-env/bin/activate
-```
+    ```bash
+    source crawler-env/bin/activate
+    ```
 
 4. Instale as bibliotecas que iremos utilizar nesse projeto. Essas bibliotecas e as suas respectivas versões estão definidas no arquivo `requirements.txt`. No Python, para instalar bibliotecas a partir desse arquivo, executamos o comando:
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 **PRONTO!** :tada: :confetti_ball: Conseguimos criar o nosso ambiente virtual e instalar as bibliotecas que vamos utilizar nesse projeto!  
 
