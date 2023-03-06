@@ -12,6 +12,11 @@ Nesse tutorial ensinamos a utilizar [`requests`](https://docs.python-requests.or
 2. [Conceitos introdutórios](#conceitos-introdutórios)
     - [O que é um crawler?](#o-que-é-um-crawler)
     - [Bibliotecas](#bibliotecas)
+        - [requests](#requests)
+        - [BeautifulSoup](#beautifulsoup)
+    - [Como uma página web é construída](#como-uma-página-web-é-construída)
+        - [HTML](#html)
+        - [CSS](#css)
 3. [Instalando as bibliotecas](#instalando-as-bibliotecas)
     - [Ambiente virtual](#ambiente-virtual)
         - [O que é um ambiente virtual?](#o-que-é-um-ambiente-virtual)
@@ -43,7 +48,89 @@ Imagina que você precisa fazer um bolo. Você tem os ingredientes, você sabe o
 
 É exatamente assim que são as bibliotecas! Uma biblioteca basicamente é uma coleção de algoritmos já prontos que podem ser reutilizados diversas vezes sem você precisar desenvolver tudo novamente.
 
-Se você está programando em Python e, em determinado momento, você precisa escolher aleatoriamente um valor entre números, letras ou qualquer outra lista de valores, podemos usar a biblioteca random para isso, por exemplo.
+Se você está programando em Python e, em determinado momento, você precisa escolher aleatoriamente um valor entre números, letras ou qualquer outra lista de valores, podemos usar a biblioteca random para isso, por exemplo:
+```
+>>> import random
+>>> numero_sorteado = random.randint(0, 1000) # Sorteia um número entre 0 e 1000
+>>> numero_sorteado
+466
+>>> vogal_sorteada = random.choice("aeiou") # Sorteia uma letra de acordo com a string passada
+>>> vogal_sorteada
+'i'
+```
+
+Viu como o uso de bibliotecas torna a vida da pessoa programadora mais fácil? Então vamos agora entender um pouco mais sobre as duas principais bibliotecas que usaremos no nosso código: `requests` e `BeautifulSoup`.
+
+#### *requests*
+A biblioteca requests é utilizada para a realizarmos solicitações via protocolo HTTP a páginas da internet utilizando Python. Com ela é possível receber todo um conteúdo de uma página, preencher um formulário de cadastro e até apagar informações. Por exemplo, vamos fazer uma requisição ao [site do Google](http://google.com):
+
+```
+>>> import requests
+>>> response = requests.get("http://google.com") # Realiza uma solicitação ao site do google
+>>> response
+<Response [200]>
+>>> response.content # Conteúdo do site
+b'<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="pt-BR"> [CONTEÚDO DO SITE AQUI] </html>'
+```
+
+Para saber mais informações sobre a biblioteca requests, você pode consultar a [documentação oficial](https://docs.python-requests.org/en/latest/index.html).
+
+#### *BeautifulSoup*
+BeautifulSou (bs4) é uma biblioteca bastante utilizada quando queremos extrair dados existentes em arquivos do tipo XML ou HTML (que é o tipo mais comum utilizado nas páginas web).
+
+Como você deve ter percebido no tópico anterior, o conteúdo de uma página web HTML pode ser muito extenso e com uma variedade de palavras e termos confusos que podem ser encontrados mais de uma vez e, talvez, encontrar o que você procura pode se tornar trabalhoso. Com o apoio do BeautifulSoup isso pode ser mais fácil, sendo possível encontrar elementos específicos no código, como o titulo da página (soup.title) ou o corpo (soup.body), além de elementos nome da tag (.name) e a tag parent (.parent.name) ou buscas específicas usando o método `find`.
+
+"tag", "body", "title"... Podem ser nomes confusos para você né? Não se preocupe! No próximo tópico, você irá entender melhor como são construídas as páginas da web e tudo isso ficará mais claro.
+
+Curtiu? Você pode pesquisar mais sobre a biblioteca BeautifulSoup e suas diversas funcionalidades consultando a [documentação oficial](https://beautiful-soup-4.readthedocs.io/en/latest/).
+
+
+### Como uma página web é construída
+Para entendermos um pouco sobre como uma página web é contruída, vamos acessar o [site da comunidade PyLadies Brasil](https://brazil.pyladies.com/) em seu navegador. Ao acessar, você provavelmente vai encontrar algo parecido com a imagem a seguir:
+![pyladiesbr-page](src/pyladies-page.png)
+
+Esse é o site oficial da comunidade PyLadies no Brasil! Aqui você irá encontrar informações de todas as comunidades PyLadies no Brasil, inclusive Salvador!
+
+Agora, que tal tentarmos entender como essa página é estruturada? Para isso, vamos utilizar um recurso do navegador chamado **inspecionar elemento**, para acessá-lo, basta aperta o botão F12 ou clicar com o botão direito do seu mouse, procurar pelo nome "Inspecionar" ou "Inspecionar elemento" e clicar em cima com o botão esquerdo.
+![menu-inspect](src/menu-inspect.png)
+
+Feito isso, você irá encontrar uma nova seção abaixo ou na lateral da sua página, como na imagem abaixo. Nessa seção, você irá encontrar todo o código escrito no arquivo HTML responsável pelo conteúdo da página, além de informações de estilo e elementos CSS utilizados para deixar a página mais bonita. 
+![menu-inspect](src/inspect.png)
+
+
+Vamos entender mais sobre isso?
+
+
+#### HTML
+HTML é um tipo de código interpretado pelo navegador para que uma página web seja exibida. A sigla HTML significa "HyperText Markup Language". HiperText significa que é um tipo de texto que suporta hiperlinks entre páginas. Markup (marcação) vem do ato de marcar um documento com códigos que dizem para o navegador web como a interpretar a página. Language é de linguagem, um código. Sendo assim, podemos traduzir literalmente HTML como Linguagem de Marcação de HiperTexto.
+
+Os códigos das páginas em HTML são estruturados a partir de tags, que representam os elementos de marcação, cada tag começa com < e termina com >.
+
+A tag mais básica é a `<html>`, todo o conteúdo da página está entre tag de início `<html>` e a tag de fim `</html>`, sendo assim, ela estará sempre no começo do arquivo.
+
+Além disso, cada página HTML também é dividida em dois elementos: head (cabeçalho) e body (corpo).
+A tag `<head>` é utilizada para dizer ao navegador quais são as configurações da página. Dentro dela, encontramos as informações que não são exibidas na tela.
+Já a tag `<body>` diz ao navegador qual é o conteúdo de fato da página. Nela se encontra tudo o que se quer que apareça na página web.
+Para se construir esse conteúdo de fato, contamos com outras tags que possuem uso específico:
+- `<p>` para parágrafos
+- `<a>` para links
+- `<h1> <h2> <h3> <h4>` e `<h5>` para textos em tamanhos diferentes
+
+e muitas outras que você pode [encontrar aqui](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+
+#### CSS
+CSS é a sigla para "Cascading Style Sheets", que em português quer dizer "Folhas de Estilo em Cascata". É uma linguagem de estilo comumente utilizada para a formatação e o visual de uma página web (ou de todo um site) que foi escrita em uma linguagem de marcação, como HTML. Podemos dizer que é a responsável por toda a beleza e estética do site, desde a cores dos textos, fundo, estilo da fonte, animações e diversas outras coisas.
+
+Para aplicar essas regras de estilo, os arquivos de CSS tem como referência as próprias tags ou elementos delas. São os mais comuns: `id` e `class`.
+
+Curtiu? Você pode saber mais sobre CSS [aqui](https://developer.mozilla.org/en-US/docs/Web/CSS).
+
+
+#### **_Desafio_:** 
+**Acesse a página do twitter das PyLadies Brasil (https://twitter.com/PyLadiesBrasil), inspencione-a e tente alterar o condteúdo do primeiro tweet não fixado para a seguinte frase: _"Estou aprendendo um pouco sobre HTML no tutorial de crawler"_.**
+
+Agora que entendemos o que é um crawler, as bibliotecas que utilizaremos para desenvolver um e como uma página web é construída, temos a base para seguir e colocar a mão na massa no desenvolvimento do nosso próprio crawler!
+
 
 ## Instalando as bibliotecas
 
