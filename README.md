@@ -1,5 +1,5 @@
 # crawler-tutorial
-Tutorial de raspagem de dados realizado em parceria com o JusBrasil e o [PyLadies Salvador](https://www.instagram.com/pyladies.ssa/)
+Tutorial de raspagem de dados realizado em parceria com o [JusBrasil](https://www.jusbrasil.com.br/) e o [PyLadies Salvador](https://www.instagram.com/pyladies.ssa/)
 
 Nesse tutorial ensinamos a utilizar [`requests`](https://docs.python-requests.org/en/latest/) e [`BeautifulSoup`](https://beautiful-soup-4.readthedocs.io/en/latest/) para raspar as 20 primeiras vagas da página de [pesquisa do LinkedIn](https://www.linkedin.com/jobs/search).
 
@@ -166,9 +166,18 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
 
 3. Ative o ambiente virtual, caso ele ainda não tenha sido ativado.
 
+*No linux:*
+
     ```bash
     source crawler-env/bin/activate
     ```
+
+*No Windows:*
+
+    ```bash
+    crawler-env\Scripts\activate.bat
+    ```
+
 
 4. Instale as bibliotecas que iremos utilizar nesse projeto (com o ambiente virtual ativado). Essas bibliotecas e as suas respectivas versões estão definidas no arquivo `requirements.txt`. No Python, para instalar bibliotecas a partir desse arquivo, executamos o comando:
 
@@ -184,9 +193,17 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
 
 Depois de ter criando o ambiente virtual e instalando as bibliotecas, ative o ambiente virtual (caso ele não esteja ativo):
 
-```bash
-source crawler-env/bin/activate
-```
+*No linux:*
+
+    ```bash
+    source crawler-env/bin/activate
+    ```
+
+*No Windows:*
+
+    ```bash
+    crawler-env\Scripts\activate.bat
+    ``
 
 E execute o crawler que foi desenvolvido:
 
