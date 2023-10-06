@@ -20,9 +20,12 @@ for vaga in seleciona_vagas:
     titulo = vaga.select(".base-search-card__title")[0].text.strip()
     empresa = vaga.select(".base-search-card__subtitle")[0].text.strip()
     localidade = vaga.select(".job-search-card__location")[0].text.strip()
-
-    link = vaga.select(".base-card__full-link")[0].get("href")
     data_publicacao = vaga.find("time").get("datetime")
+
+    if len(vaga.select(".hidden-nested-link")) == 0:
+        link = vaga.select(".base-card")[0].get("href")
+    else:
+        link = vaga.select(".hidden-nested-link")[0].get("href")
 
     print(f"Vaga: {titulo}")
     print(f"Empresa: {empresa}")
