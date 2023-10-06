@@ -166,13 +166,13 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
 
 3. Ative o ambiente virtual, caso ele ainda não tenha sido ativado.
 
-*No linux:*
-
+    * *No linux:*
+    
     ```bash
     source crawler-env/bin/activate
     ```
 
-*No Windows:*
+    * *No Windows:*
 
     ```bash
     crawler-env\Scripts\activate.bat
@@ -193,17 +193,17 @@ Agora que sabemos o que é um ambiente virtual, vamos criar um para poder execut
 
 Depois de ter criando o ambiente virtual e instalando as bibliotecas, ative o ambiente virtual (caso ele não esteja ativo):
 
-*No linux:*
+* *No linux:*
 
-    ```bash
-    source crawler-env/bin/activate
-    ```
+```bash
+source crawler-env/bin/activate
+```
 
-*No Windows:*
+* *No Windows:*
 
-    ```bash
-    crawler-env\Scripts\activate.bat
-    ``
+```bash
+crawler-env\Scripts\activate.bat
+```
 
 E execute o crawler que foi desenvolvido:
 
